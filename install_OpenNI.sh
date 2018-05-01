@@ -1,6 +1,8 @@
 
 # http://www.openni.org/openni-sdk/openni-sdk-history-2/
-
+sudo apt-get install doxygen
+#sudo apt-get install openjdk-7-jdk
+sudo apt-get install openjdk-8-jdk
 sudo apt-get install libusb-1.0-0-dev freeglut3-dev g++
 
 cp Platform.Arm.RPI3 ~/Platform.Arm
