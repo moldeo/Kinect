@@ -1741,7 +1741,7 @@ if (update_on>0 && this->Initialized() ) {
 
                 if (m_BodyX) { m_BodyX->GetData()->SetFloat( (m_VBody.X()/640.0) -0.5f ); m_BodyX->Update(true); }
                 if (m_BodyY) { m_BodyY->GetData()->SetFloat( (0.5f - m_VBody.Y()/480.0) ); m_BodyY->Update(true); }
-                if (m_BodyZ) { m_BodyZ->GetData()->SetFloat( m_VBody.Z() ); m_BodyZ->Update(true); }
+                if (m_BodyZ) { m_BodyZ->GetData()->SetFloat( m_VBody.Z() ); m_BodyZ->Update(true); /*MODebug2->Message("moKinect::Update TORSO_Z > " + FloatToStr(m_VBody.Z()) );*/ }
                 if (m_BodyC) { m_BodyC->GetData()->SetFloat( xnbody.fConfidence ); m_BodyC->Update(true); }
                 if (m_Body) { m_Body->GetData()->SetVector( (moVector4d*)&m_VBody ); m_Body->Update(true); }
 
@@ -2253,8 +2253,8 @@ if (update_on>0 && this->Initialized() ) {
 
                             //grey values:
 
-                            pFData[i*4+1+j*m_OutputMode.nXRes*4] = pFData[i*4+j*m_OutputMode.nXRes*4];
-                            pFData[i*4+2+j*m_OutputMode.nXRes*4] = pFData[i*4+j*m_OutputMode.nXRes*4];
+                            pFData[i*4+1+j*m_OutputMode.nXRes*4] = ( z - (int)m_Offset.X() ) / disoff;/*pFData[i*4+j*m_OutputMode.nXRes*4];*/
+                            pFData[i*4+2+j*m_OutputMode.nXRes*4] = ( z - (int)m_Offset.X() ) / disoff;
                             pFData[i*4+3+j*m_OutputMode.nXRes*4] = 1.0f;
 
 
