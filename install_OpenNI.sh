@@ -6,12 +6,14 @@ sudo apt-get install openjdk-8-jdk
 sudo apt-get install libusb-1.0-0-dev freeglut3-dev g++
 
 cp Platform.Arm.RPI3 ~/Platform.Arm
+cp Makefile.openni ~/Makefile.openni
 cd ~
 mkdir kinect
 cd kinect
 git clone https://github.com/OpenNI/OpenNI.git -b unstable
 cd ~/kinect/OpenNI/Platform/Linux/CreateRedist
 cp ~/Platform.Arm ~/kinect/OpenNI/Platform/Linux/Build/Common/Platform.Arm
+cp ~/Makefile.openni ~/kinect/OpenNI/Platform/Linux/Build/Makefile
 bash RedistMaker
 cd ../Redist/OpenNI-Bin-Dev-Linux-*/
 sudo ./install.sh
